@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
     <div class="container">
@@ -13,7 +14,18 @@
         </nav>
         <div class="main"></div>
 
-        <div class="nav-bottom"></div>
+        <div class="nav-bottom">
+            <div class="wallet nav-item" onclick="setActive(this)">
+                <i class="fa-solid fa-wallet"></i>
+            </div>
+            <div class="home nav-item" onclick="setActive(this)">
+                <i class="fa-solid fa-house"></i>
+            </div>
+            <div class="account nav-item" onclick="setActive(this)">
+                <i class="fa-solid fa-user"></i>
+            </div>
+        </div>
     </div>
+    <script src="script.js"></script>
 </body>
 </html>
