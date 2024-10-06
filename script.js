@@ -33,3 +33,34 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('main2').style.display = 'none';
     document.getElementById('main3').style.display = 'none';
 });
+
+
+
+
+
+
+
+
+let acc_name = document.querySelector(".acc-name");
+let savedValue = localStorage.getItem("counterValue");
+if (savedValue) {
+    acc_name.innerText = `Hello ${savedValue} !!!`;
+} else {
+    acc_name.innerText = "Hello there !!!";
+}
+function appearPrompt(){
+    let name = prompt("enter your name");
+    acc_name.innerText = `Hello ${name} !!!`;
+    localStorage.setItem("counterValue", name);
+
+
+
+
+}
+let totalPoints = document.querySelector(".total-points");
+let savedpoints = localStorage.getItem("counterValue2");
+if (savedpoints) {
+    totalPoints.innerText = 0;
+} else {
+    totalPoints.innerText = `0000 points`;
+}
