@@ -42,7 +42,17 @@ nav{
 
 
 .main{
-    /* background-color: yellow; */
+    background-color: rgb(75, 75, 75);
+    width: 100%;
+    height: 90%;
+}
+.main2{
+    background-color: yellow;
+    width: 100%;
+    height: 90%;
+}
+.main3{
+    background-color: red;
     width: 100%;
     height: 90%;
 }
