@@ -106,3 +106,36 @@ document.addEventListener('DOMContentLoaded', () => {
     firstTaskItem.classList.add('active'); // Set the first task nav as active
     setActiveTask(firstTaskItem); // Show the first task section
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+const fullscreenButton = document.getElementById('fullscreen-btn');
+
+// Function to toggle fullscreen mode
+function toggleFullscreen() {
+    if (!document.fullscreenElement) {
+        // If not in fullscreen, request fullscreen on the entire document
+        document.documentElement.requestFullscreen()
+            .catch(err => {
+                alert(`Error attempting to enable full-screen mode: ${err.message} (${err.name})`);
+            });
+    } else {
+        // If already in fullscreen, exit fullscreen
+        document.exitFullscreen();
+    }
+}
+
+// Attach the function to the button's click event
+fullscreenButton.addEventListener('click', toggleFullscreen);
