@@ -16,7 +16,8 @@ body,html{
 .container{
     /* width: 410px; */
     width: 100vw;
-    height: 703px;
+   /* height: 703px;*/
+    height: 100vh
     background-color: black;
     /* border-radius: 20px; */
     color: #B3B3B3;
