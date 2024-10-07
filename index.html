@@ -10,10 +10,56 @@
 <body>
     <div class="container">
         <nav>
-            Task Play
+            <div>
+                <i class="fa-solid fa-gamepad"></i> Task Play
+            </div>
+            <div class="nav-bal"></div>
         </nav>
-        <div class="main" id="main"></div>
-        <div class="main2" id="main2"></div>
+        <div class="main" id="main">
+            <div class="task">
+                <div class="task-nav">
+                    <div class="task-nav-1 nav-part" onclick="setActiveTask(this)">
+                        Daily Hustles
+                    </div>
+                    <div class="task-nav-2 nav-part" onclick="setActiveTask(this)">
+                        Multi-Tasker
+                    </div>
+                    <div class="task-nav-3 nav-part" onclick="setActiveTask(this)">
+                        Single Shot
+                    </div>
+                </div>
+                <div class="task-body-1" id="task-body-1" >Content for Daily Hustles</div>
+<div class="task-body-2" id="task-body-2" >Content for Multi-Tasker</div>
+<div class="task-body-3" id="task-body-3">Content for Single Shot</div>
+
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+        <div class="main2" id="main2">
+            
+        </div>
+
+
+
+
+
+
+
+
+
+
+
         <div class="main3" id="main3">
             <div class="account-heading">
                 <div class="acc-img"></div>
@@ -29,13 +75,13 @@
         </div>        
 
         <div class="nav-bottom">
-            <div class="wallet nav-item" onclick="setActive(this)">
+            <div class="wallet nav-item" onclick="setActiveNav(this)">
                 <i class="fa-solid fa-wallet"></i>
             </div>
-            <div class="home nav-item" onclick="setActive(this)">
+            <div class="home nav-item" onclick="setActiveNav(this)">
                 <i class="fa-solid fa-house"></i>
             </div>
-            <div class="account nav-item" onclick="setActive(this)">
+            <div class="account nav-item" onclick="setActiveNav(this)">
                 <i class="fa-solid fa-user"></i>
             </div>
         </div>

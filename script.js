@@ -1,5 +1,5 @@
 // Function to add 'active' class to the clicked nav-item and show corresponding section
-function setActive(element) {
+function setActiveNav(element) {
     // Remove 'active' class from any previously active items
     let items = document.querySelectorAll('.nav-item');
     items.forEach(item => item.classList.remove('active'));
@@ -41,6 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
 let acc_name = document.querySelector(".acc-name");
 let savedValue = localStorage.getItem("counterValue");
 if (savedValue) {
@@ -64,3 +65,44 @@ if (savedpoints) {
 } else {
     totalPoints.innerText = `0000 points`;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+function setActiveTask(element) {
+    // Remove 'active' class from any previously active items
+    let items = document.querySelectorAll('.nav-part');
+    items.forEach(item => item.classList.remove('active'));
+    
+    // Add 'active' class to the clicked item
+    element.classList.add('active');
+    
+    // Hide all task sections
+    let sections = ['task-body-1', 'task-body-2', 'task-body-3'];
+    sections.forEach(section => {
+        document.getElementById(section).style.display = 'none';
+    });
+    if (element.classList.contains('task-nav-1')) {
+        document.getElementById('task-body-1').style.display = 'block';
+    } else if (element.classList.contains('task-nav-2')) {
+        document.getElementById('task-body-2').style.display = 'block';
+    } else if (element.classList.contains('task-nav-3')) {
+        document.getElementById('task-body-3').style.display = 'block';
+    }
+}
+
+// Set the default active task when the page loads
+document.addEventListener('DOMContentLoaded', () => {
+    const firstTaskItem = document.querySelector('.task-nav-1');
+    firstTaskItem.classList.add('active'); // Set the first task nav as active
+    setActiveTask(firstTaskItem); // Show the first task section
+});
