@@ -60,6 +60,7 @@ nav i{
     /* padding: 10px; */
     margin: 10px;
     /* width: 390px; */
+    width: 100vw;
     height: 96%;
     border-radius: 5px;
     display: flex;
@@ -94,17 +95,29 @@ nav i{
 .task-nav-1{
     border-left: none;
 }
-.task-body-1{
+.task-body-1 {
     width: 100%;
-    height: 100%;
+    height: 100%; /* Ensure it maintains its original height */
     border-radius: 0 0 2px 2px;
-    background-color: red;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    padding: 20px;
+    overflow-y: auto; /* Enable vertical scrolling */
+    scroll-behavior: smooth; /* Smooth scrolling */
+    -ms-overflow-style: none; /* Hide scrollbar in IE and Edge */
+    scrollbar-width: none; /* Hide scrollbar in Firefox */
 }
+
+.task-body-1::-webkit-scrollbar {
+    display: none; /* Hide scrollbar in Chrome, Safari, and Opera */
+}
+
 .task-body-2{
     width: 100%;
     height: 100%;
     border-radius: 0 0 2px 2px;
-    background-color: red;
+    /* background-color: red; */
 }
 .task-body-3{
     width: 100%;
@@ -112,7 +125,13 @@ nav i{
     border-radius: 0 0 2px 2px;
     /* background-color: red; */
 }
-
+.task-container {
+    width: 100%;
+    min-height: 100px; /* Use min-height instead of height to avoid shrinking */
+    background-color: black;
+    border-radius: 10px;
+    margin: 10px 0;
+}
 
 
 

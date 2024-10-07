@@ -15,11 +15,11 @@ function setActiveNav(element) {
     
     // Show the corresponding section based on the clicked nav-item
     if (element.classList.contains('home')) {
-        document.getElementById('main').style.display = 'block';
+        document.getElementById('main').style.display = 'flex';
     } else if (element.classList.contains('wallet')) {
-        document.getElementById('main2').style.display = 'block';
+        document.getElementById('main2').style.display = 'flex';
     } else if (element.classList.contains('account')) {
-        document.getElementById('main3').style.display = 'block';
+        document.getElementById('main3').style.display = 'flex';
     }
 }
 
@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
     homeItem.classList.add('active');
     
     // Show only the 'main' section initially
-    document.getElementById('main').style.display = 'block';
+    document.getElementById('main').style.display = 'flex';
     document.getElementById('main2').style.display = 'none';
     document.getElementById('main3').style.display = 'none';
 });
@@ -92,11 +92,11 @@ function setActiveTask(element) {
         document.getElementById(section).style.display = 'none';
     });
     if (element.classList.contains('task-nav-1')) {
-        document.getElementById('task-body-1').style.display = 'block';
+        document.getElementById('task-body-1').style.display = 'flex';
     } else if (element.classList.contains('task-nav-2')) {
-        document.getElementById('task-body-2').style.display = 'block';
+        document.getElementById('task-body-2').style.display = 'flex';
     } else if (element.classList.contains('task-nav-3')) {
-        document.getElementById('task-body-3').style.display = 'block';
+        document.getElementById('task-body-3').style.display = 'flex';
     }
 }
 
