@@ -139,6 +139,44 @@ nav i{
     justify-content: center;
     /* align-items: center; */
 }
+.create-task-container {
+    width: 100%;
+    min-height: 100px; /* Use min-height instead of height to avoid shrinking */
+    background-color: rgb(37, 37, 37);
+    border-radius: 10px;
+    margin: 10px 0;
+}
+.create-task-container .input-section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+.create-task-container .input-section input#todoInput{
+    background-color: rgb(37, 37, 37);
+    /* background-color: black; */
+    color: #B3B3B3;
+    outline: none;
+    border: none;
+}
+.create-task-container .input-section input#pointsInput{
+    background-color: rgb(37, 37, 37);
+    /* background-color: black; */
+    color: #B3B3B3;
+    outline: none;
+    border: none;
+}
+.create-task-container .input-section #addButton{
+    /* padding: 10px; */
+    background-color: #7A1CAC;
+    padding: 5px;
+    border-radius: 10px;
+    width: 70px;
+    font-size: 10px;
+    border: none;
+    color: #B3B3B3;
+}
 .task-container .task-name{
     font-size: 20px;
     display: flex;
@@ -151,7 +189,7 @@ nav i{
 .task-container .task-point{
     font-size: 13px;
     margin-left: 20px;
-    color: #212121;
+    color: #2e2e2e;
 }
 .task-container .point-btn {
     width: 70px;
