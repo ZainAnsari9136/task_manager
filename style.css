@@ -128,13 +128,51 @@ nav i{
     /* background-color: red; */
 }
 .task-container {
+    position: relative;
     width: 100%;
     min-height: 100px; /* Use min-height instead of height to avoid shrinking */
     background-color: black;
     border-radius: 10px;
     margin: 10px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* align-items: center; */
 }
+.task-container .task-name{
+    font-size: 20px;
+    display: flex;
+    justify-content: space-between;
+    padding-right: 10px;
+    color: #B3B3B3;
+    font-weight: 800;
+    margin-left: 20px;
+}
+.task-container .task-point{
+    font-size: 13px;
+    margin-left: 20px;
+    color: #212121;
+}
+.task-container .point-btn {
+    width: 70px;
+    background-color: #7A1CAC;
+    border-radius: 10px;
+    font-size: 10px;
+    padding: 5px;
+    margin-left: auto;
+    margin-right: 20px;
+}
+.delet-btn {
+    color: red;
+    position: absolute;
+    /* margin-left: auto; */
+    top: 3px;
+    font-size: 15px;
+    /* margin-top: auto; */
+    /* top: 10px; */
+    right: 4px;
 
+}
 
 
 
