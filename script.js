@@ -49,21 +49,28 @@ if (savedValue) {
 } else {
     acc_name.innerText = "Hello there !!!";
 }
-function appearPrompt(){
-    let name = prompt("enter your name");
+
+function appearPrompt() {
+    let name = prompt("Enter your name");
     acc_name.innerText = `Hello ${name} !!!`;
     localStorage.setItem("counterValue", name);
-
-
-
-
 }
+
+
+
+// let totalPoints2 = document.querySelector(".total-points");
+// let savedpoints = localStorage.getItem("counterValue2");
+// if (savedpoints) {
+//     totalPoints.innerText = 0;
+// } else {
+//     totalPoints.innerText = `0000 points`;
+// }
 let totalPoints = document.querySelector(".total-points");
-let savedpoints = localStorage.getItem("counterValue2");
-if (savedpoints) {
-    totalPoints.innerText = 0;
+let savedPoints = localStorage.getItem("counterValue2");
+if (savedPoints) {
+    totalPoints.innerText = `${savedPoints} points`;
 } else {
-    totalPoints.innerText = `0000 points`;
+    totalPoints.innerText = "0000 points";
 }
 
 
@@ -139,3 +146,197 @@ function toggleFullscreen() {
 
 // Attach the function to the button's click event
 fullscreenButton.addEventListener('click', toggleFullscreen);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Get the elements
+const clickableDiv = document.getElementById('clickableDiv');
+const popup = document.getElementById('popup');
+const close = document.querySelector('.close');
+
+// Show the popup when the div is clicked
+clickableDiv.addEventListener('click', () => {
+  popup.style.display = 'flex';
+});
+
+// Close the popup when the close button is clicked
+close.addEventListener('click', () => {
+  popup.style.display = 'none';
+});
+
+// Close the popup if the user clicks outside the popup content
+window.addEventListener('click', (event) => {
+  if (event.target === popup) {
+    popup.style.display = 'none';
+  }
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// const addButton = document.getElementById('addButton');
+// const todoInput = document.getElementById('todoInput');
+// const pointsInput = document.getElementById('pointsInput');
+// const todoList = document.getElementById('todoList');
+// const totalPointsDisplay = document.getElementById('totalPointsDisplay');
+// Variables for task input and button
+// const addButton = document.getElementById('addButton');
+// const todoInput = document.getElementById('todoInput');
+// const pointsInput = document.getElementById('pointsInput');
+// const todoList = document.getElementById('todoList');
+//  totalPoints = parseInt(localStorage.getItem('counterValue2')) || 0;
+
+// // Function to add task
+// addButton.addEventListener('click', () => {
+//     const taskName = todoInput.value;
+//     const taskPoints = parseInt(pointsInput.value);
+
+//     if (taskName && taskPoints) {
+//         // Create a new task div
+//         const taskDiv = document.createElement('div');
+//         taskDiv.classList.add('task');
+//         taskDiv.innerHTML = `<p>${taskName}</p><p>${taskPoints} points</p><button class="delete-btn">Delete</button>`;
+
+//         // Add task to the list
+//         todoList.appendChild(taskDiv);
+
+//         // Update total points
+//         totalPoints += taskPoints;
+//         localStorage.setItem('counterValue2', totalPoints);
+//         document.querySelector('.total-points').innerText = `${totalPoints} points`;
+
+//         // Clear input fields
+//         todoInput.value = '';
+//         pointsInput.value = '';
+
+//         // Add delete button functionality
+//         const deleteButton = taskDiv.querySelector('.delete-btn');
+//         deleteButton.addEventListener('click', () => {
+//             taskDiv.remove();
+//             totalPoints -= taskPoints;
+//             localStorage.setItem('counterValue2', totalPoints);
+//             document.querySelector('.total-points').innerText = `${totalPoints} points`;
+//         });
+//     }
+// });
+
+
+
+// Select elements
+const addButton = document.getElementById('addButton');
+const todoInput = document.getElementById('todoInput');
+const pointsInput = document.getElementById('pointsInput');
+const todoList = document.getElementById('todoList');
+const totalPointsDisplay = document.getElementById('totalPointsDisplay');
+
+// Initialize total points
+let totalPoints2 = JSON.parse(localStorage.getItem('totalPoints2')) || 0;
+totalPointsDisplay.textContent = `Total Points: ${totalPoints2}`;
+
+// Function to load saved tasks from local storage
+function loadTasks() {
+    const tasks = JSON.parse(localStorage.getItem('tasks')) || [];
+    tasks.forEach(task => createTask(task.name, task.points));
+}
+
+// Function to create a new task element
+function createTask(taskName, points) {
+    const taskDiv = document.createElement('div');
+    taskDiv.classList.add('todo-item');
+
+    const taskDetailsDiv = document.createElement('div');
+    taskDetailsDiv.classList.add('task-details');
+    
+    const taskNameSpan = document.createElement('span');
+    taskNameSpan.textContent = `Task: ${taskName}`;
+    
+    const taskPointsSpan = document.createElement('span');
+    taskPointsSpan.textContent = `Points: ${points}`;
+
+    taskDetailsDiv.appendChild(taskNameSpan);
+    taskDetailsDiv.appendChild(taskPointsSpan);
+
+    const givePointsButton = document.createElement('button');
+    givePointsButton.textContent = 'Get Points';
+    givePointsButton.classList.add('givePointsButton');
+    givePointsButton.onclick = function() {
+        updateTotalPoints(points);
+    };
+
+    const deleteButton = document.createElement('button');
+    deleteButton.innerHTML = '<i class="fa-solid fa-trash"></i>';
+    deleteButton.classList.add('deleteButton');
+    deleteButton.onclick = function() {
+        taskDiv.remove();
+        deleteTaskFromStorage(taskName);  // Deletion will not affect total points
+    };
+
+    taskDiv.appendChild(taskDetailsDiv);
+    taskDiv.appendChild(givePointsButton);
+    taskDiv.appendChild(deleteButton);
+    todoList.appendChild(taskDiv);
+}
+
+// Function to add a task to local storage
+function addTaskToStorage(taskName, points) {
+    const tasks = JSON.parse(localStorage.getItem('tasks')) || [];
+    tasks.push({ name: taskName, points: points });
+    localStorage.setItem('tasks', JSON.stringify(tasks));
+}
+
+// Function to delete a task from local storage
+function deleteTaskFromStorage(taskName) {
+    let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
+    tasks = tasks.filter(task => task.name !== taskName);
+    localStorage.setItem('tasks', JSON.stringify(tasks));
+}
+
+// Function to update the total points
+function updateTotalPoints(points) {
+    totalPoints2 += parseInt(points);
+    totalPointsDisplay.textContent = `Total Points: ${totalPoints2}`;
+    localStorage.setItem('totalPoints2', JSON.stringify(totalPoints2));
+}
+
+// Add event listener to the add button
+addButton.addEventListener('click', function() {
+    const taskName = todoInput.value;
+    const points = pointsInput.value;
+    
+    if (taskName.trim() && points.trim()) {
+        createTask(taskName, points);
+        addTaskToStorage(taskName, points);
+        todoInput.value = '';
+        pointsInput.value = '';
+    } else {
+        alert('Please enter both task name and points.');
+    }
+});
+
+// Load saved tasks on page load
+window.onload = loadTasks;
