@@ -166,6 +166,8 @@ nav i{
     color: #B3B3B3;
     font-weight: 800;
     margin-left: 20px;
+    height: 25px;
+    overflow-y: hidden;
 }
 .task-details span:nth-child(2) {
     /* color: #7A1CAC; */
@@ -516,8 +518,22 @@ nav i{
 
 
 
+.notisfication-reloader {
+    width: 100%;
+    height: 5px;
+    background-color: #B3B3B3; /* Color of the reloader */
+    display: none; /* Initially hidden */
+    position: fixed;
+    top: 39.2px; /* Position just below the notification */
+    transition: width 3s; /* Animate width change */
+    z-index: 1000; /* Ensure it's on top */
+    transform-origin: right;
+}
 
 
 
-
+@keyframes spin {
+    0% { transform: scaleX(0); }
+    100% { transform: scaleX(1); }
+}
 
