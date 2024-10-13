@@ -253,34 +253,7 @@ if (savedPoints) {
 
 
 
-function setActiveTask(element) {
-    // Remove 'active' class from any previously active items
-    let items = document.querySelectorAll('.nav-part');
-    items.forEach(item => item.classList.remove('active'));
-    
-    // Add 'active' class to the clicked item
-    element.classList.add('active');
-    
-    // Hide all task sections
-    let sections = ['task-body-1', 'task-body-2', 'task-body-3'];
-    sections.forEach(section => {
-        document.getElementById(section).style.display = 'none';
-    });
-    if (element.classList.contains('task-nav-1')) {
-        document.getElementById('task-body-1').style.display = 'flex';
-    } else if (element.classList.contains('task-nav-2')) {
-        document.getElementById('task-body-2').style.display = 'flex';
-    } else if (element.classList.contains('task-nav-3')) {
-        document.getElementById('task-body-3').style.display = 'flex';
-    }
-}
 
-// Set the default active task when the page loads
-document.addEventListener('DOMContentLoaded', () => {
-    const firstTaskItem = document.querySelector('.task-nav-1');
-    firstTaskItem.classList.add('active'); // Set the first task nav as active
-    setActiveTask(firstTaskItem); // Show the first task section
-});
 
 
 
@@ -314,24 +287,6 @@ function toggleFullscreen() {
 
 // Attach the function to the button's click event
 fullscreenButton.addEventListener('click', toggleFullscreen);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// Get the elements
 const clickableDiv = document.getElementById('clickableDiv');
 const popup = document.getElementById('popup');
 const close = document.querySelector('.close');
@@ -352,67 +307,3 @@ window.addEventListener('click', (event) => {
     popup.style.display = 'none';
   }
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// const addButton = document.getElementById('addButton');
-// const todoInput = document.getElementById('todoInput');
-// const pointsInput = document.getElementById('pointsInput');
-// const todoList = document.getElementById('todoList');
-// const totalPointsDisplay = document.getElementById('totalPointsDisplay');
-// Variables for task input and button
-// const addButton = document.getElementById('addButton');
-// const todoInput = document.getElementById('todoInput');
-// const pointsInput = document.getElementById('pointsInput');
-// const todoList = document.getElementById('todoList');
-//  totalPoints = parseInt(localStorage.getItem('counterValue2')) || 0;
-
-// // Function to add task
-// addButton.addEventListener('click', () => {
-//     const taskName = todoInput.value;
-//     const taskPoints = parseInt(pointsInput.value);
-
-//     if (taskName && taskPoints) {
-//         // Create a new task div
-//         const taskDiv = document.createElement('div');
-//         taskDiv.classList.add('task');
-//         taskDiv.innerHTML = `<p>${taskName}</p><p>${taskPoints} points</p><button class="delete-btn">Delete</button>`;
-
-//         // Add task to the list
-//         todoList.appendChild(taskDiv);
-
-//         // Update total points
-//         totalPoints += taskPoints;
-//         localStorage.setItem('counterValue2', totalPoints);
-//         document.querySelector('.total-points').innerText = `${totalPoints} points`;
-
-//         // Clear input fields
-//         todoInput.value = '';
-//         pointsInput.value = '';
-
-//         // Add delete button functionality
-//         const deleteButton = taskDiv.querySelector('.delete-btn');
-//         deleteButton.addEventListener('click', () => {
-//             taskDiv.remove();
-//             totalPoints -= taskPoints;
-//             localStorage.setItem('counterValue2', totalPoints);
-//             document.querySelector('.total-points').innerText = `${totalPoints} points`;
-//         });
-//     }
-// });
-
-
-
-// Select elements
