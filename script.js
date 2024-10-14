@@ -268,19 +268,22 @@ if (savedPoints) {
 
 
 
-
+let fs = document.querySelector(".fullscreen-btn");
 const fullscreenButton = document.getElementById('fullscreen-btn');
 
 // Function to toggle fullscreen mode
 function toggleFullscreen() {
     if (!document.fullscreenElement) {
+    let fs = document.querySelector(".fullscreen-btn");
         // If not in fullscreen, request fullscreen on the entire document
         document.documentElement.requestFullscreen()
             .catch(err => {
+    let fs = document.querySelector(".fullscreen-btn");
                 alert(`Error attempting to enable full-screen mode: ${err.message} (${err.name})`);
             });
     } else {
         // If already in fullscreen, exit fullscreen
+        fs.style.display = 'none';
         document.exitFullscreen();
     }
 }
@@ -307,3 +310,12 @@ window.addEventListener('click', (event) => {
     popup.style.display = 'none';
   }
 });
+
+
+
+
+
+function fsclose(){
+    // alert("hii");
+    fs.style.display = 'none';
+}

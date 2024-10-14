@@ -9,6 +9,11 @@
 </head>
 <body>
     <div class="container">
+        <div class="fullscreen-btn">
+            <h1>Please use full-screen mode for better experience</h1>
+            <button id="fullscreen-btn">Go Fullscreen</button>
+            <div class="fs-close" onclick="fsclose()">X</div>  
+        </div>
         <div id="notification" style="display:none; position: fixed; top: 0; width: 100%; text-align: center; background-color: #4CAF50; color: white; padding: 10px;">
     Points added!
         </div>
@@ -19,7 +24,10 @@
                 <i class="fa-solid fa-gamepad"></i> Task Play
             </div>
             <div class="nav-bal">
-                <button id="fullscreen-btn">Go Fullscreen</button>  
+                <!-- <button id="fullscreen-btn">Go Fullscreen</button>   -->
+                <!-- <h1>Rewards</h1> -->
+
+                <div class="coin"><i class="fa-solid fa-coins"></i> <div class="total-points tp">200</div></div>
             </div>
         </nav>
         <div class="main" id="main">
@@ -29,12 +37,6 @@
                         <!-- Daily Hustles -->
                         <i class="fa-solid fa-list-check"></i> Your Task
                     </div>
-                    <!-- <div class="task-nav-2 nav-part" onclick="setActiveTask(this)">
-                        Multi-Tasker
-                    </div> -->
-                    <!-- <div class="task-nav-3 nav-part" onclick="setActiveTask(this)">
-                        Single Shot
-                    </div> -->
                 </div>
                 <div class="task-body-1" id="task-body-1" >
                      <p id="totalPointsDisplay">Total Points: 0000</p>
@@ -51,17 +53,8 @@
                             <button id="addButton">Add Task</button>
                         </div>
                       </div>
-                    <!-- <div class="task-container"></div>
-                    <div class="task-container"></div>
-                    <div class="task-container"></div> -->
+                    
                 </div>
-                <!-- <div id="task-body-2">
-                    <div id="todoList"></div>
-                    <div class="create-task-container" id="clickableDiv">
-                        <i class="fa-solid fa-plus"></i>
-                    </div>
-                  </div> -->
-                <!-- <div class="task-body-3" id="task-body-3">Content for Single Shot</div> -->
             </div>
         </div>
 
@@ -77,17 +70,32 @@
 
 
         <div class="main2" id="main2">
-            <div class="task2">
+            <div class="task">
                 <div class="task-nav">
-                    <h1>Rewards</h1>
-                    <div class="coin"><i class="fa-solid fa-coins"></i> <div class="total-points tp">200</div></div>
+                    <div class="task-nav-1 nav-part">
+                        <i class="fa-solid fa-shop"></i> Shop
+                    </div>
                 </div>
-                <div class="main2-task-body">
-                    <div class="reward-1"></div>
-                    <div class="reward-1"></div>
-                    <div class="reward-1"></div>
-                    <div class="reward-1"></div>
-                    <div class="reward-1"></div>
+                <div class="task-body-1 main2-task" id="task-body-1" >
+                     <div class="todo-item"></div>
+                     <div class="todo-item"></div>
+                     <div class="todo-item"></div>
+                     <div class="todo-item"></div>
+                     <div class="todo-item"></div>
+                     <div class="todo-item"></div>
+                     <div class="todo-item"></div>
+                     <div class="todo-item"></div>
+                     <div class="todo-item"></div>
+                     <div class="todo-item"></div>
+                     <div class="todo-item"></div>
+                     <div class="todo-item"></div>
+                     <div class="todo-item"></div>
+                     <div class="todo-item"></div>
+                     <div class="todo-item"></div>
+                     <div class="todo-item"></div>
+                     <div class="todo-item"></div>
+                     <div class="todo-item"></div>
+                     <div class="todo-item"></div>
                 </div>
             </div>
         </div>

@@ -27,6 +27,37 @@ body,html{
     justify-content: space-between;
     flex-direction: column;
 }
+.fullscreen-btn{
+    margin-top: 20px;
+    position: absolute;
+    width: 90%;
+    height: 100px;
+    background-color: black;
+    border-radius: 10px;
+    /* display: flex; */
+    /* justify-content: center; */
+    /* align-items: center; */
+    padding: 20px;
+    position: absolute;
+}
+.fs-close{
+    position: absolute;
+    top: 6px;
+    right: 10px;
+    color: red;
+    cursor: pointer;
+}
+.fullscreen-btn h1{
+    font-size: 15px;
+}
+.fullscreen-btn button{
+    margin-left: 200px;
+    background-color: #7A1CAC;
+    /* font-size: 15px; */
+    padding: 5px;
+    border-radius: 20px;
+    border: none;
+}
 nav{
     /* background-color: rgb(44, 44, 44); */
     background-color: #7A1CAC;
@@ -44,6 +75,9 @@ nav i{
     margin-right: 5px;
 }
 .nav-bal{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
     width: 100px;
     height: 30px;
     background-color: #AD49E1;
@@ -51,7 +85,7 @@ nav i{
 }
 
 
-
+/* zain */
 .main{
     /* background-color: rgb(75, 75, 75); */
     width: 100%;
@@ -103,7 +137,7 @@ nav i{
 }
 .task-body-1 {
     width: 100%;
-    height: 100%; /* Ensure it maintains its original height */
+    height: 72vh; /* Ensure it maintains its original height */
     border-radius: 0 0 2px 2px;
     display: flex;
     flex-direction: column;
@@ -367,55 +401,40 @@ nav i{
     width: 100%;
     height: 90%;
 }
-.main2 .task-nav{
-    padding: 0 10px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
+
 .main2 .task h1{
     font-size: 26px;
     color: #7A1CAC;
 }
-.main2 .task .coin{
-    width: 100px;
-    height: 90%;
-    background-color: #7A1CAC;
-    border-radius: 20px;
+
+.coin{
     display: flex;
     align-items: center;
-    justify-content: center;
 }
 .coin i {
     color: yellow;
-    font-size: 25px;
+    font-size: 20px;
     margin-right: 15px;
     margin-left: 13px;
 }
 .tp{
-    height: 20px;
     overflow: hidden;
-    /* background-color: #2e2e2e; */
+    height: 20px;
+    margin-bottom: 5px;
 }
-.main2-task-body{
-    width: 100%;
-    height: 100%;
-    /* background-color: #000000; */
-    display: flex;
+.main2-task {
+    /* background-color: #7A1CAC; */
+    /* width: 40%; */
+    flex-direction: row;
     flex-wrap: wrap;
 }
-.reward-1{
-    /* width: 30vw; */
-    width: 300px;
-    box-sizing: border-box;
-    height: 200px;
-    background-color: aqua;
-    margin: 20px;
-    flex-shrink: 0;
-}
-.task2{
-    background-color: #2e2e2e;
-    height: 100px;
+.main2-task .todo-item{
+    /* background-color: #7A1CAC; */
+    /* width: 140px; */
+    width: 44%;
+    height: 60%;
+    margin: 10px;
+
 }
 
 
