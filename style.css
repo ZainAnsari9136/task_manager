@@ -413,7 +413,10 @@ nav i{
     margin: 20px;
     flex-shrink: 0;
 }
-
+.task2{
+    background-color: #2e2e2e;
+    height: 100px;
+}
 
 
 
