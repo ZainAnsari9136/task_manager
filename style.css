@@ -474,9 +474,10 @@ nav i{
     /* font-family: cursive; */
     padding-top: 8px;
 }
-.bgline p{
+.main2-task p{
     font-size: 5px;
-    margin-top: auto;
+    margin-top: 16px;
+    font-weight: 900;
 }
 .main2-task .todo-item2{
     background-color: #C57879;
@@ -487,6 +488,22 @@ nav i{
     border-radius: 10px;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+}
+.circle{
+    width: 60%;
+    height: 40%;
+    border-radius: 50%;
+    /* border: 2px ; */
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    font-weight: 900;
+    text-align: center;
+    font-size: 20px;
+    text-shadow: 0 0 5px #a16162;
 }
 
 
