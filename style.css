@@ -402,12 +402,6 @@ nav i{
     width: 100%;
     height: 90%;
 }
-
-.main2 .task h1{
-    font-size: 26px;
-    color: #7A1CAC;
-}
-
 .coin{
     display: flex;
     align-items: center;
@@ -431,12 +425,59 @@ nav i{
 }
 .main2-task .todo-item {
     width: 43%;
-    height: 50%;
+    height: 45%;
     margin: 10px;
+    background-image: url(./images/bg.jpg);
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-
-
-
+.bgline{
+    width: 80%;
+    height: 80%;
+    border: 2px solid white;
+    backdrop-filter: blur(10px);
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+    color: #FED3ED;
+    
+    /* background-color: rgba(255, 255, 255, 0.2); */
+}
+.bgline .bg1{
+    font-size: 14px;
+    font-weight: 900;
+    color: white;
+    text-shadow: 0 0 5px #C52DA0, 0 0 10px #C52DA0, 0 0 15px #C52DA0, 
+                         0 0 20px #C52DA0, 0 0 25px #C52DA0;
+    /* text-shadow: 0 0 10px #fff, 0 0 20px #CB38A7, 0 0 30px #ff00ff,  */
+                         /* 0 0 40px #ff00ff, 0 0 50px #ff00ff, 0 0 60px #ff00ff; */
+}
+.bgline .bg2{
+    font-size: 15px;
+    font-weight: 900;
+    text-shadow: 0 0 5px #C52DA0, 0 0 10px #C52DA0, 0 0 15px #C52DA0, 
+                         0 0 20px #C52DA0, 0 0 25px #C52DA0;
+}
+.purchase {
+    width: 110%;
+    margin-top: 20px;
+    font-size: 8px;
+    padding: 10px;
+    height: 35%;
+    border: 2px solid #D944AE;
+    font-weight: 700;
+    /* font-family: cursive; */
+    padding-top: 8px;
+}
+.bgline p{
+    font-size: 5px;
+    margin-top: auto;
+}
 
 
 
