@@ -15,33 +15,6 @@ totalPointsDisplay.textContent = `Total Points: ${totalPoints2}`;
 
 
 
-function decreasePoints(amount) {
-    // Get the current total points from local storage
-    let currentPoints = parseInt(localStorage.getItem("totalPoints")) || 0;
-
-    // Decrease points
-    currentPoints -= amount;
-
-    // Ensure points don't go below zero
-    if (currentPoints < 0) {
-        currentPoints = 0;
-    }
-
-    // Update local storage
-    localStorage.setItem("totalPoints", currentPoints);
-
-    // Update the displayed points immediately
-    // document.getElementById("totalPoints").innerText = currentPoints;
-}
-
-// Event listener for the decrease points link
-document.getElementById("decreasePointsLink").addEventListener("click", (event) => {
-    // event.preventDefault(); // Prevent default anchor behavior
-    // decreasePoints(10); // Decrease points by 10 (or any amount you choose)
-});
-
-
-
 // Function to load saved tasks from local storage
 function loadTasks() {
     const tasks = JSON.parse(localStorage.getItem('tasks')) || [];
@@ -359,7 +332,7 @@ function decreasePoints(amount) {
     let currentPoints = parseInt(localStorage.getItem("totalPoints2")) || 0;
     // Decrease points
     currentPoints -= amount;
-    console.log(currentPoints);
+    // console.log(currentPoints);
 
     // Ensure points don't go below zero
     if (currentPoints < 0) {
@@ -368,6 +341,11 @@ function decreasePoints(amount) {
 
     // Update local storage
     localStorage.setItem("totalPoints2", currentPoints);
+    totalPointsDisplay.textContent = `Total Points: ${currentPoints}`;
+    totalPoints.textContent = `${currentPoints} Points`;
+    document.querySelector('#main3 .total-points').innerText = `${currentPoints} - points`;
+
+    console.log(document.querySelector('#main3 .total-points').innerText);
 
     // Update the displayed points
     // document.getElementById("totalPoints2").innerText = currentPoints;
@@ -376,5 +354,42 @@ function decreasePoints(amount) {
 // Event listener for the decrease points link
 document.getElementById("decreasePointsLink").addEventListener("click", (event) => {
     event.preventDefault(); // Prevent default anchor behavior
+    // appearPrompt();
+    showLoader();
+    showNotification(`Purchased successfully`);
     decreasePoints(10); // Decrease points by 10 (or any amount you choose)
+});
+
+
+
+
+
+document.getElementById("decreasePointsLink2").addEventListener("click", (event) => {
+    event.preventDefault(); // Prevent default anchor behavior
+    // appearPrompt();
+    showLoader();
+    showNotification(`Purchased successfully`);
+    decreasePoints(20); // Decrease points by 10 (or any amount you choose)
+});
+
+
+
+
+document.getElementById("decreasePointsLink3").addEventListener("click", (event) => {
+    event.preventDefault(); // Prevent default anchor behavior
+    // appearPrompt();
+    showLoader();
+    showNotification(`Purchased successfully`);
+    decreasePoints(30); // Decrease points by 10 (or any amount you choose)
+});
+
+
+
+
+document.getElementById("decreasePointsLink4").addEventListener("click", (event) => {
+    event.preventDefault(); // Prevent default anchor behavior
+    // appearPrompt();
+    showLoader();
+    showNotification(`Purchased successfully`);
+    decreasePoints(60); // Decrease points by 10 (or any amount you choose)
 });
