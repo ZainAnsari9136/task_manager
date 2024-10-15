@@ -1,4 +1,5 @@
 // Function to add 'active' class to the clicked nav-item and show corresponding section
+
 let totalPoints2;
 const addButton = document.getElementById('addButton');
 const todoInput = document.getElementById('todoInput');
@@ -7,8 +8,39 @@ const todoList = document.getElementById('todoList');
 const totalPointsDisplay = document.getElementById('totalPointsDisplay');
 
 // Initialize total points
- totalPoints2 = JSON.parse(localStorage.getItem('totalPoints2')) || 0;
+//  totalPoints2 = JSON.parse(localStorage.getItem('totalPoints2')) || 0;
+totalPoints2 = JSON.parse(localStorage.getItem('totalPoints2')) || 0;
+
 totalPointsDisplay.textContent = `Total Points: ${totalPoints2}`;
+
+
+
+function decreasePoints(amount) {
+    // Get the current total points from local storage
+    let currentPoints = parseInt(localStorage.getItem("totalPoints")) || 0;
+
+    // Decrease points
+    currentPoints -= amount;
+
+    // Ensure points don't go below zero
+    if (currentPoints < 0) {
+        currentPoints = 0;
+    }
+
+    // Update local storage
+    localStorage.setItem("totalPoints", currentPoints);
+
+    // Update the displayed points immediately
+    // document.getElementById("totalPoints").innerText = currentPoints;
+}
+
+// Event listener for the decrease points link
+document.getElementById("decreasePointsLink").addEventListener("click", (event) => {
+    // event.preventDefault(); // Prevent default anchor behavior
+    // decreasePoints(10); // Decrease points by 10 (or any amount you choose)
+});
+
+
 
 // Function to load saved tasks from local storage
 function loadTasks() {
@@ -184,6 +216,7 @@ function setActiveNav(element) {
         document.getElementById('main2').style.display = 'flex';
     } else if (element.classList.contains('account')) {
         document.getElementById('main3').style.display = 'flex';
+        document.querySelector('#main3 .total-points').innerText = `${totalPoints2} points`
     }
 }
 
@@ -216,9 +249,14 @@ if (savedValue) {
 
 function appearPrompt() {
     let name = prompt("Enter your name");
-    acc_name.innerText = `Hello ${name} !!!`;
-    localStorage.setItem("counterValue", name);
+    if (name) {
+        acc_name.innerText = `Hello ${name} !!!`;
+        localStorage.setItem("counterValue", name);
+    }
+    // Re-enter fullscreen after prompt
+    toggleFullscreen(); // Ensure to call your toggle function again
 }
+
 
 
 
@@ -233,8 +271,8 @@ let totalPoints = document.querySelector(".total-points");
 let savedPoints = localStorage.getItem("totalPoints2");
 // totalPoints.innerText = totalPoints2;
 if (savedPoints) {
-    totalPoints.innerText = `${savedPoints} points`; 
-    // console.log(totalPoints2);
+    totalPoints2 = parseInt(savedPoints);
+    totalPoints.innerText = `${totalPoints2} points`;
 } else {
     
     totalPoints.innerText = "0000 points";
@@ -274,19 +312,13 @@ const fullscreenButton = document.getElementById('fullscreen-btn');
 // Function to toggle fullscreen mode
 function toggleFullscreen() {
     if (!document.fullscreenElement) {
-    let fs = document.querySelector(".fullscreen-btn");
-        // If not in fullscreen, request fullscreen on the entire document
         document.documentElement.requestFullscreen()
-            .catch(err => {
-    let fs = document.querySelector(".fullscreen-btn");
-                alert(`Error attempting to enable full-screen mode: ${err.message} (${err.name})`);
-            });
+            .catch(err => alert(`Error attempting to enable full-screen mode: ${err.message} (${err.name})`));
     } else {
-        // If already in fullscreen, exit fullscreen
-        fs.style.display = 'none';
         document.exitFullscreen();
     }
 }
+
 
 // Attach the function to the button's click event
 fullscreenButton.addEventListener('click', toggleFullscreen);
@@ -319,3 +351,30 @@ function fsclose(){
     // alert("hii");
     fs.style.display = 'none';
 }
+
+
+// Function to decrease points
+function decreasePoints(amount) {
+    // Get the current total points from local storage
+    let currentPoints = parseInt(localStorage.getItem("totalPoints2")) || 0;
+    // Decrease points
+    currentPoints -= amount;
+    console.log(currentPoints);
+
+    // Ensure points don't go below zero
+    if (currentPoints < 0) {
+        currentPoints = 0;
+    }
+
+    // Update local storage
+    localStorage.setItem("totalPoints2", currentPoints);
+
+    // Update the displayed points
+    // document.getElementById("totalPoints2").innerText = currentPoints;
+}
+
+// Event listener for the decrease points link
+document.getElementById("decreasePointsLink").addEventListener("click", (event) => {
+    event.preventDefault(); // Prevent default anchor behavior
+    decreasePoints(10); // Decrease points by 10 (or any amount you choose)
+});

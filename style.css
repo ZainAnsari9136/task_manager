@@ -194,6 +194,14 @@ nav i{
     justify-content: center;
     /* align-items: center; */
 }
+.todo-item a{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
 .task-details{
     display: flex;
     flex-direction: column;
@@ -438,13 +446,16 @@ nav i{
     width: 80%;
     height: 80%;
     border: 2px solid white;
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(9px);
+    /* backdrop-filter: blur(2px); */
     display: flex;
     /* justify-content: center; */
     align-items: center;
     flex-direction: column;
     padding: 20px;
     color: #FED3ED;
+    /* color: black; */
+    text-align: center;
     
     /* background-color: rgba(255, 255, 255, 0.2); */
 }
@@ -471,13 +482,14 @@ nav i{
     height: 35%;
     border: 2px solid #D944AE;
     font-weight: 700;
-    /* font-family: cursive; */
     padding-top: 8px;
+    color: black;
 }
 .main2-task p{
     font-size: 5px;
     margin-top: 16px;
     font-weight: 900;
+    color: #7A1CAC;
 }
 .main2-task .todo-item2{
     background-color: #C57879;
@@ -545,6 +557,9 @@ nav i{
     background-color: #7A1CAC;
     border-radius: 50%;
     margin: 10px;
+    background-image: url(./images/profile.png);
+    background-position: center;
+    background-size: cover;
 }
 .acc-name{
     font-size: 20px;
