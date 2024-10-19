@@ -113,17 +113,33 @@ function showLoader() {
 }
 // Function to show notification message
 function showNotification(message) {
-    const notificationDiv = document.getElementById('notification');
+    console.log(typeof message)
+    if(message == 'Not enough points'){
+        const notificationDiv = document.getElementById('notification');
     const notismsg = document.getElementById('ntmsg');
     notificationDiv.textContent = message;
     notificationDiv.style.display = 'block'; // Show the message
     notismsg.style.display = 'block'; // Show the message
+    notificationDiv.style.backgroundColor = 'red'
 
     // Automatically hide the message after 3 seconds
     setTimeout(() => {
         notificationDiv.style.display = 'none';
         notismsg.style.display = 'none';
     }, 3000); // 3 seconds delay
+    }else{
+    const notificationDiv = document.getElementById('notification');
+    const notismsg = document.getElementById('ntmsg');
+    notificationDiv.textContent = message;
+    notificationDiv.style.display = 'block'; // Show the message
+    notismsg.style.display = 'block'; // Show the message
+    notificationDiv.style.backgroundColor = '#32CD32'
+    // Automatically hide the message after 3 seconds
+    setTimeout(() => {
+        notificationDiv.style.display = 'none';
+        notismsg.style.display = 'none';
+    }, 3000); // 3 seconds delay
+}
 }
 
 
@@ -265,20 +281,6 @@ if (savedPoints) {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 let fs = document.querySelector(".fullscreen-btn");
 const fullscreenButton = document.getElementById('fullscreen-btn');
 
@@ -331,8 +333,8 @@ function decreasePoints(amount) {
     // Get the current total points from local storage
     let currentPoints = parseInt(localStorage.getItem("totalPoints2")) || 0;
     // Decrease points
+    console.log(currentPoints);
     currentPoints -= amount;
-    // console.log(currentPoints);
 
     // Ensure points don't go below zero
     if (currentPoints < 0) {
@@ -354,11 +356,20 @@ function decreasePoints(amount) {
 // Event listener for the decrease points link
 document.getElementById("decreasePointsLink").addEventListener("click", (event) => {
     event.preventDefault(); // Prevent default anchor behavior
-    // appearPrompt();
-    showLoader();
-    showNotification(`Purchased successfully`);
-    decreasePoints(10); // Decrease points by 10 (or any amount you choose)
+    showLoader(); // Assuming this shows a loading animation
+
+    // Get current points
+    let currentPoints = parseInt(localStorage.getItem("totalPoints2")) || 0;
+    
+    // Check if points are enough
+    if (currentPoints >= 10) {
+        showNotification(`Purchased successfully`);
+        decreasePoints(10); // Decrease points by 10 (or any amount you choose)
+    } else {
+        showNotification(`Not enough points`);
+    }
 });
+
 
 
 
@@ -368,8 +379,16 @@ document.getElementById("decreasePointsLink2").addEventListener("click", (event)
     event.preventDefault(); // Prevent default anchor behavior
     // appearPrompt();
     showLoader();
-    showNotification(`Purchased successfully`);
-    decreasePoints(20); // Decrease points by 10 (or any amount you choose)
+        // Get current points
+        let currentPoints = parseInt(localStorage.getItem("totalPoints2")) || 0;
+    
+        // Check if points are enough
+        if (currentPoints >= 20) {
+            showNotification(`Purchased successfully`);
+            decreasePoints(20); // Decrease points by 10 (or any amount you choose)
+        } else {
+            showNotification(`Not enough points`);
+        }
 });
 
 
@@ -379,8 +398,14 @@ document.getElementById("decreasePointsLink3").addEventListener("click", (event)
     event.preventDefault(); // Prevent default anchor behavior
     // appearPrompt();
     showLoader();
-    showNotification(`Purchased successfully`);
-    decreasePoints(30); // Decrease points by 10 (or any amount you choose)
+    let currentPoints = parseInt(localStorage.getItem("totalPoints2")) || 0;
+
+    if (currentPoints >= 30) {
+        showNotification(`Purchased successfully`);
+        decreasePoints(30); // Decrease points by 10 (or any amount you choose)
+    } else {
+        showNotification(`Not enough points`);
+    }
 });
 
 
@@ -390,6 +415,12 @@ document.getElementById("decreasePointsLink4").addEventListener("click", (event)
     event.preventDefault(); // Prevent default anchor behavior
     // appearPrompt();
     showLoader();
-    showNotification(`Purchased successfully`);
-    decreasePoints(60); // Decrease points by 10 (or any amount you choose)
+
+    let currentPoints = parseInt(localStorage.getItem("totalPoints2")) || 0;
+    if (currentPoints >= 60) {
+        showNotification(`Purchased successfully`);
+        decreasePoints(60); // Decrease points by 10 (or any amount you choose)
+    } else {
+        showNotification(`Not enough points`);
+    }
 });
